@@ -1,3 +1,3 @@
-const utils = require('./utils')
+import { now } from './utils'
 
-console.log('hello world', utils.now())
+console.log('hello world', now())
