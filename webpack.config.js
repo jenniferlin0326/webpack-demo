@@ -5,7 +5,7 @@ const config = require('./config')
 
 module.exports = {
   entry: {
-    app: ['./src/main.js'],
+    app: ['./src/main.js', require.resolve('webpack-dev-server/client') + '?/', require.resolve('webpack/hot/dev-server')],
     style: ['./src/css/application.sass']
   },
   output: {
@@ -45,6 +45,7 @@ module.exports = {
         'process.env': config.env
       }),
       new ExtractTextPlugin({ filename: '[name].css?[hash:7]', allChunks: true }),
+      new webpack.HotModuleReplacementPlugin(),
       // new webpack.optimize.UglifyJsPlugin()
   ]
 }
