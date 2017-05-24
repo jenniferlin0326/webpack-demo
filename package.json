@@ -9,6 +9,8 @@
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.1",
+    "browser-sync": "^2.18.12",
+    "browser-sync-webpack-plugin": "^1.1.4",
     "cross-env": "^5.0.0",
     "css-loader": "^0.28.2",
     "extract-text-webpack-plugin": "^2.1.0",

@@ -1,7 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const config = require('./config')
+const browserSyncConfig = require('./webpack/browserSync.config')
 
 module.exports = {
   entry: {
@@ -44,6 +46,12 @@ module.exports = {
      new webpack.DefinePlugin({
         'process.env': config.env
       }),
+      new BrowserSyncPlugin(
+        browserSyncConfig,
+        {
+          reload: false
+        }
+      ),
       new ExtractTextPlugin({ filename: '[name].css?[hash:7]', allChunks: true }),
       new webpack.HotModuleReplacementPlugin(),
       // new webpack.optimize.UglifyJsPlugin()
